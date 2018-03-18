@@ -1,31 +1,35 @@
 import React from "react";
 import  FormBtn from "../../components/Form/FormBtn";
 import Input from "../../components/Form/Input";
+import { Link } from "react-router-dom";
 
 class Welcome extends React.Component {
   render() {
     return(
-      <div className="login" style={{backgroundColor:"#f0eee5", height:"100vh", textAlign:"center"}}>
-        <h1 style={{fontSize:"4vh", color:"#977960", paddingTop:"15vh", paddingBottom:"5vh"}}>Welcome</h1>
-        <form>
-          <Input
-            label="Email"
-            type="text" 
-            name="email"
-            placeholder="Email"
-            value=''
-          />
-          <Input
-            label="Password"
-            name="password"
-            type="password"
-            placeholder="Password"
-            value=''
-          />
-          <FormBtn label="Login"/>
-          </form>
-          <p>Need to create and account? <a href="#">Click Here</a></p>
+      <div className="container" style={{backgroundColor:"#f0eee5", height:"100vh", textAlign:"center", marginTop:-50}}>
+        <p className="App-intro" style={{fontSize:"4vh", color:"#977960", paddingTop:"15vh", paddingBottom:"5vh"}}>Welcome</p>
+        <div className="login">
+          
+          <form>
+            <Input
+              label="Email"
+              type="text" 
+              name="email"
+              placeholder="Email"
+              value=''
+            />
+            <Input
+              label="Password"
+              name="password"
+              type="password"
+              placeholder="Password"
+              value=''
+            />
+            <FormBtn label="Login"/>
+            </form>
+          <p>Need to create and account? <Link to="/account">Click Here</Link></p>
         </div>
+      </div>
     );
   }
 };
