@@ -21,13 +21,14 @@ class Select extends React.Component {
           style={{fontSize:25, width:"80%", border:"1px solid #000", borderRadius:"3px"}}
           value={this.state.value}
           onChange={this.handleChange}
-        />
+        >
         <option value="dataFields">Data Fields</option>
         <option value="date">Date</option>
         <option value="nestId">Nest ID</option>
         <option value="pitTagId">PIT tag ID</option>
         <option value="notchedId">Notched ID</option>
         <option value="nestRelocated">Nest Relocated</option>
+        </select>
       </div>
     );
   }

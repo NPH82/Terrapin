@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 class CreateAccount extends React.Component {
   render() {
     return(
+    
       <div className="container" style={{backgroundColor:"#f0eee5", height:"100vh", textAlign:"center", marginTop:-50}}>
         <p className="App-intro" style={{fontSize:"4vh", color:"#977960", paddingTop:"15vh", paddingBottom:"5vh"}}>Create Account</p>
         <div className="createAccount">
@@ -44,7 +45,7 @@ class CreateAccount extends React.Component {
             type="number"
             placeholder="Phone Number"
             value=''
-          />      
+          />    
           <FormBtn label="Submit"/>
           </form>
           <p>Back to <Link to="/">Login</Link></p>
