@@ -14,7 +14,7 @@ class TextArea extends React.Component {
 
   render() {
     return(
-      <div className="form-group" style={{textAlign:"center", marginBottom:30}}>
+      <div className="textArea" style={{textAlign:"center", marginBottom:30}}>
       <label style={{fontSize:25, color:"#977960"}}>{this.props.label}</label>
       <br/>
       <textarea
