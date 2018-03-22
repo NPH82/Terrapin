@@ -4,7 +4,7 @@ import "./Navbar.css";
 class Navbar extends React.Component {
   render () {
     return (
-      <nav className="navbar">
+      <nav className="navbar navbar-inverse">
         <div className="container-fluid">
           <ul className="nav navbar-nav">
             <li className="active"><a href="/admin">Home</a></li>

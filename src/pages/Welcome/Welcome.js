@@ -4,10 +4,13 @@ import Input from "../../components/Form/Input";
 import { Link } from "react-router-dom";
 
 class Welcome extends React.Component {
+  static defaultProps = {
+    name: "Volunteer"
+  }
   render() {
     return(
       <div className="container" style={{backgroundColor:"#f0eee5", height:"100vh", textAlign:"center", marginTop:-50}}>
-        <p className="App-intro" style={{fontSize:"4vh", color:"#977960", paddingTop:"15vh", paddingBottom:"5vh"}}>Welcome</p>
+        <p className="App-intro" style={{fontSize:"4vh", color:"#977960", paddingTop:"15vh", paddingBottom:"5vh"}}>Welcome {this.props.name}</p>
         <div className="login">
           
           <form>
