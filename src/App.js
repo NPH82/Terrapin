@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import  Welcome from "./pages/Welcome";
 import CreateAccount from "./pages/CreateAccount";
+import AdminWelcome from "./pages/Admin/AdminWelcome";
 
 const App = () => 
       <Router>
@@ -17,6 +18,7 @@ const App = () =>
             <Switch>
               <Route exact path="/" component={Welcome}/>>
               <Route exaxt path="/account" component={CreateAccount}/>
+              <Route exact path="/admin" component={AdminWelcome}/>
             </Switch>
         </div>
       </Router>;
