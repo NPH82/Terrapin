@@ -3,7 +3,7 @@ import React from "react";
 class TextArea extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 'Enter Notes'};
+    this.state = {value: ''};
   
     this.handleChange = this.handleChange.bind(this);
   }
@@ -21,6 +21,7 @@ class TextArea extends React.Component {
         style={{fontSize:25, width:"80%", border:"1px solid #000", borderRadius:"3px"}}
         value={this.state.value}
         onChange={this.handleChange}
+        placeholder="Enter Notes Here"
       />
       </div>
     );
