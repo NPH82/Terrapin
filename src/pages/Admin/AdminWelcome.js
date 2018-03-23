@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
-import DataMap from "../../components/Map";
 import Select from "../../components/Form/Select";
 import FormBtn from "../../components/Form/FormBtn";
 

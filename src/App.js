@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import  Welcome from "./pages/Welcome";
 import CreateAccount from "./pages/CreateAccount";
 import AdminWelcome from "./pages/Admin/AdminWelcome";
+import AdminMap from "./pages/Admin/AdminMap";
 
 const App = () => 
       <Router>
@@ -16,9 +17,10 @@ const App = () =>
           </p> */}
           
             <Switch>
-              <Route exact path="/" component={Welcome}/>>
+              <Route exact path="/" component={Welcome}/>
               <Route exaxt path="/account" component={CreateAccount}/>
               <Route exact path="/admin" component={AdminWelcome}/>
+              <Route exact path="/admin/map" component={AdminMap}/>
             </Switch>
         </div>
       </Router>;
