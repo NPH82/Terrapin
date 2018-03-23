@@ -3,7 +3,7 @@ import React from "react";
 class Select extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 'Data Fields'};
+    this.state = {value: "Data Fields"};
   
     this.handleChange = this.handleChange.bind(this);
   }
