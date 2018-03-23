@@ -28,7 +28,9 @@ class Welcome extends React.Component {
               placeholder="Password"
               value=''
             />
-            <FormBtn label="Login"/>
+            <Link to="/nesting">
+              <FormBtn label="Login"/>
+            </Link>
             </form>
           <p>Need to create and account? <Link to="/account">Click Here</Link></p>
         </div>

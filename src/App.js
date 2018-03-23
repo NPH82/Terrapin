@@ -7,6 +7,7 @@ import AdminWelcome from "./pages/Admin/AdminWelcome";
 import AdminMap from "./pages/Admin/AdminMap";
 import AdminRecent from "./pages/Admin/AdminRecent";
 import AdminArchived from "./pages/Admin/AdminArchived";
+import Nesting from "./pages/Nesting";
 
 const App = () => 
       <Router>
@@ -25,6 +26,7 @@ const App = () =>
               <Route exact path="/admin/map" component={AdminMap}/>
               <Route exact path="/admin/recent" component={AdminRecent}/>
               <Route exact path="/admin/archive" component={AdminArchived}/>
+              <Route exact path="/nesting" component={Nesting}/>
             </Switch>
         </div>
       </Router>;
