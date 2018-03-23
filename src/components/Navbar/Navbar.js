@@ -10,7 +10,7 @@ class Navbar extends React.Component {
             <li className="active"><a href="/admin">Home</a></li>
             <li><a href="/admin/recent">Recent</a></li>
             <li><a href="/admin/map">Map</a></li>
-            <li><a href="/admin/archived">Archived</a></li>
+            <li><a href="/admin/archive">Archives</a></li>
           </ul>
         </div>
       </nav>
