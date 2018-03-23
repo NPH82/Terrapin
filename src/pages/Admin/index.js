@@ -1,1 +1,2 @@
-export { default } from "./AdminWelcome";
+export * from "./AdminWelcome";
+export * from "./AdminMap";
