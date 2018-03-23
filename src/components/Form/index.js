@@ -1,1 +1,3 @@
-export { default } from "./FormBtn";
+export * from "./FormBtn";
+export * from "./Input";
+export * from "./TextArea";
