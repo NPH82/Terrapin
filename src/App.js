@@ -5,6 +5,7 @@ import  Welcome from "./pages/Welcome";
 import CreateAccount from "./pages/CreateAccount";
 import AdminWelcome from "./pages/Admin/AdminWelcome";
 import AdminMap from "./pages/Admin/AdminMap";
+import AdminRecent from "./pages/Admin/AdminRecent";
 
 const App = () => 
       <Router>
@@ -21,6 +22,7 @@ const App = () =>
               <Route exaxt path="/account" component={CreateAccount}/>
               <Route exact path="/admin" component={AdminWelcome}/>
               <Route exact path="/admin/map" component={AdminMap}/>
+              <Route exact path="/admin/recent" component={AdminRecent}/>
             </Switch>
         </div>
       </Router>;
