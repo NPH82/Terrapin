@@ -20,5 +20,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 # api
 /src/firebase/firebase.js
+=======
+/src/firebase/firebase.js
+>>>>>>> 16aa32e1cf0ea32f0271a8a4ef499dcc21bc0b51
