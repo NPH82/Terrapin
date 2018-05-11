@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import SignOutButton from './SignOut';
 import * as routes from '../constants/routes';
 
 const Navigation = () =>
@@ -10,6 +11,7 @@ const Navigation = () =>
       <li><Link to={routes.CREATE_ACCOUNT}>Create Account</Link></li>
       <li><Link to={routes.ADMIN_HOME}>Administration</Link></li>
       <li><Link to={routes.NESTING}>Nesting Form</Link></li>
+      <li><SignOutButton /></li>
     </ul>
   </div>
 
