@@ -74,7 +74,7 @@ class CreateAccount extends React.Component {
       <div className="container" style={{backgroundColor:"#f0eee5", height:"100vh", textAlign:"center", marginTop:-50}}>
         <p className="App-intro" style={{fontSize:"4vh", color:"#977960", paddingTop:"15vh", paddingBottom:"5vh"}}>Create Account</p>
         <div className="createAccount">
-          <form onSubmit={this.submit}>
+          <form onSubmit={this.onSubmit}>
           <Input
             value={username}
             onChange={event => this.setState(byPropKey('username', event.taget.value))}
@@ -84,7 +84,7 @@ class CreateAccount extends React.Component {
           <Input
             value={email}
             onChange={event => this.setState(byPropKey('email', event.target.value))}
-            type="email"
+            type="text"
             placeholder="Enter Email"
           />
           <Input

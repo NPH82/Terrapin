@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, } from "react-router-dom";
-import  Welcome from "./pages/Welcome";
-import CreateAccount from "./pages/CreateAccount";
+import SignInPage from "./pages/Welcome";
+import SignUpPage from "./pages/CreateAccount";
 import AdminWelcome from "./pages/Admin/AdminWelcome";
 import Nesting from "./pages/Nesting/Nesting";
 import Navigation from "./components/Navigation";
@@ -22,11 +22,11 @@ const App = () =>
       
       <Route 
         exact path={routes.SIGN_IN} 
-        component={() => <Welcome />}
+        component={() => <SignInPage />}
       />
       <Route 
         exact path={routes.CREATE_ACCOUNT}
-        component={() => <CreateAccount />}
+        component={() => <SignUpPage />}
       />
       <Route 
         exact path={routes.ADMIN_HOME} 

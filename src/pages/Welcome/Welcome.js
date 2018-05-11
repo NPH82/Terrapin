@@ -1,42 +1,99 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+
+import { SignUpLink } from "../CreateAccount/CreateAccount";
+import { auth } from "../../firebase";
+import * as routes from "../../constants/routes";
+
 import  FormBtn from "../../components/Form/FormBtn";
 import Input from "../../components/Form/Input";
-import { Link } from "react-router-dom";
+
+const SignInPage = ({ history }) =>
+  <div>
+    <Welcome history={history} />
+  </div>
+
+const INITIAL_STATE = {
+  email: '',
+  password: '',
+  error: null,
+}
+
+const byPropKey = (propertyName, value) => () => ({
+  [propertyName]: value,
+});
 
 class Welcome extends React.Component {
-  static defaultProps = {
-    name: "Volunteer"
+  constructor(props) {
+    super(props);
+
+    this.state = { ...INITIAL_STATE };
   }
+
+  onSubmit = (event) => {
+    const {
+      email,
+      password,
+    } = this.state;
+
+    const {
+      history,
+    } = this.props;
+
+    auth.doSignInWithEmailAndPassword(email, password)
+      .then(() => {
+        this.setState(() => ({ ...INITIAL_STATE }));
+        history.push(routes.SIGN_IN);
+      })
+      .catch(error => {
+        this.setState(byPropKey('error', error));
+      });
+      
+      event.preventDefault();
+  }
+
   render() {
+    const {
+      email,
+      password,
+      error,
+    } = this.state;
+
+    const isInvalid =
+      password === '' ||
+      email === '';
+
     return(
       <div className="container" style={{backgroundColor:"#f0eee5", height:"100vh", textAlign:"center", marginTop:-50}}>
-        <p className="App-intro" style={{fontSize:"4vh", color:"#977960", paddingTop:"15vh", paddingBottom:"5vh"}}>Welcome {this.props.name}</p>
+        <p className="App-intro" style={{fontSize:"4vh", color:"#977960", paddingTop:"15vh", paddingBottom:"5vh"}}>Welcome</p>
         <div className="login">
-          
-          <form>
+          <form onSubmit={this.onSubmit}>
             <Input
-              label="Email"
+              value={email}
+              onChange={event => this.setState(byPropKey('email', event.target.value))}
               type="text" 
-              name="email"
               placeholder="Email"
-              value=''
             />
             <Input
-              label="Password"
-              name="password"
+              value={password}
+              onChange={event => this.setState(byPropKey('password', event.target.value))}
               type="password"
               placeholder="Password"
-              value=''
             />
-            <Link to="/nesting">
-              <FormBtn label="Login"/>
-            </Link>
-            </form>
-          <p>Need to create and account? <Link to="/account">Click Here</Link></p>
+            <FormBtn disabled={isInvalid} type="submit" label="Login" />
+             
+            { error && <p>{error.message}</p> }
+          </form>
+          
+          <SignUpLink /> 
         </div>
       </div>
     );
   }
 };
 
-export default Welcome;
+export default withRouter(SignInPage);
+
+export {
+  Welcome,
+};
