@@ -4,8 +4,15 @@ import { Link } from 'react-router-dom';
 import SignOutButton from './SignOut';
 import * as routes from '../constants/routes';
 
-const Navigation = () =>
+const Navigation = ({ authUser }) =>
   <div>
+    { authUser
+        ? <NavigationAuth />
+        : <NaigationNonAuth />
+    }
+  </div>
+
+  const NavigationAuth = () =>
     <ul>
       <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
       <li><Link to={routes.CREATE_ACCOUNT}>Create Account</Link></li>
@@ -13,6 +20,10 @@ const Navigation = () =>
       <li><Link to={routes.NESTING}>Nesting Form</Link></li>
       <li><SignOutButton /></li>
     </ul>
-  </div>
+  
+  const NavigationNonAuth = () =>
+    <ul>
+      <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+    </ul>
 
 export default Navigation;
