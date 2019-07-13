@@ -7,16 +7,17 @@ import AdminWelcome from "./pages/Admin/AdminWelcome";
 import Nesting from "./pages/Nesting/Nesting";
 import Navigation from "./components/Navigation";
 import * as routes from "./constants/routes";
-import PasswordForgetPage from "./pages/PasswordForget"
+import PasswordForgetPage from "./pages/PasswordForget";
+import withAuthentication from "./components/Authentication/withAuthentication"
 // import AdminMap from "./pages/Admin/AdminMap";
 // import AdminRecent from "./pages/Admin/AdminRecent";
 // import AdminArchived from "./pages/Admin/AdminArchived";
 // import AdminNesting from "./pages/Nesting/AdminNesting"
 
-const App = () => 
+const App = () =>
   <Router>
     <div>
-      <Navigation />
+      <Navigation authUser={this.state.authUser} />
            
       <hr/>
       
@@ -46,5 +47,6 @@ const App = () =>
       <Route exact path="/admin/nesting" component={AdminNesting}/> */}
     </div>
   </Router>
+ 
 
-export default App;
+export default withAuthentication(App);
