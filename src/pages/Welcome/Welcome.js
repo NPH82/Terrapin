@@ -38,18 +38,28 @@ class Welcome extends React.Component {
 
     const {
       history,
+      checkRateLimit,
     } = this.props;
 
-    auth.doSignInWithEmailAndPassword(email, password)
-      .then(() => {
-        this.setState(() => ({ ...INITIAL_STATE }));
-        history.push(routes.SIGN_IN);
-      })
-      .catch(error => {
-        this.setState(byPropKey('error', error));
-      });
+    try {
+      // Check rate limiting
+      checkRateLimit();
       
-      event.preventDefault();
+      auth.doSignInWithEmailAndPassword(email, password)
+        .then(() => {
+          this.setState(() => ({ ...INITIAL_STATE }));
+          history.push(routes.SIGN_IN);
+        })
+        .catch(error => {
+          // Don't expose specific error details to prevent enumeration
+          const genericError = new Error('Invalid email or password');
+          this.setState(byPropKey('error', genericError));
+        });
+    } catch (rateLimitError) {
+      this.setState(byPropKey('error', rateLimitError));
+    }
+      
+    event.preventDefault();
   }
 
   render() {

@@ -77,7 +77,7 @@ class CreateAccount extends React.Component {
           <form onSubmit={this.onSubmit}>
           <Input
             value={username}
-            onChange={event => this.setState(byPropKey('username', event.taget.value))}
+            onChange={event => this.setState(byPropKey('username', event.target.value))}
             type="text"
             placeholder="Name"
           />
